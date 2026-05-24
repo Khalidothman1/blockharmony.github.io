@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Harmony - Privacy Policy</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0D0D0D;
+            color: #E0E0E0;
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        /* ===== ANIMATED BACKGROUND GRID ===== */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.03;
+            background-image:
+                linear-gradient(rgba(0, 229, 255, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 229, 255, 0.3) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        /* ===== FLOATING GLOW ORBS ===== */
+        .glow-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .glow-orb-1 {
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 229, 255, 0.08);
+            top: 10%;
+            left: -5%;
+            animation-delay: 0s;
+        }
+
+        .glow-orb-2 {
+            width: 250px;
+            height: 250px;
+            background: rgba(124, 77, 255, 0.06);
+            top: 50%;
+            right: -5%;
+            animation-delay: -3s;
+        }
+
+        .glow-orb-3 {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 96, 144, 0.05);
+            bottom: 5%;
+            left: 30%;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-30px) scale(1.05); }
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 60px 20px 40px;
+            border-bottom: 1px solid rgba(42, 42, 78, 0.5);
+        }
+
+        .header-icon {
+            display: inline-flex;
+            gap: 4px;
+            margin-bottom: 20px;
+        }
+
+        .header-block {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+            animation: pulse-block 2s ease-in-out infinite;
+        }
+
+        .header-block:nth-child(1) {
+            background: #00E5FF;
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+            animation-delay: 0s;
+        }
+        .header-block:nth-child(2) {
+            background: #7C4DFF;
+            box-shadow: 0 0 10px rgba(124, 77, 255, 0.4);
+            animation-delay: 0.2s;
+        }
+        .header-block:nth-child(3) {
+            background: #FF6090;
+            box-shadow: 0 0 10px rgba(255, 96, 144, 0.4);
+            animation-delay: 0.4s;
+        }
+        .header-block:nth-child(4) {
+            background: #FFD740;
+            box-shadow: 0 0 10px rgba(255, 215, 64, 0.4);
+            animation-delay: 0.6s;
+        }
+
+        @keyframes pulse-block {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.15); opacity: 1; }
+        }
+
+        .game-title {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 6px;
+            background: linear-gradient(90deg, #00E5FF, #7C4DFF, #FF6090);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .page-title {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 3px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        /* ===== EFFECTIVE DATE BADGE ===== */
+        .effective-date {
+            display: inline-block;
+            background: rgba(26, 26, 46, 0.8);
+            border: 1px solid rgba(42, 42, 78, 0.6);
+            border-radius: 20px;
+            padding: 8px 20px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .effective-date span {
+            color: #00E5FF;
+            font-weight: 600;
+        }
+
+        /* ===== SECTION CARDS ===== */
+        .section {
+            background: rgba(26, 26, 46, 0.4);
+            border: 1px solid rgba(42, 42, 78, 0.4);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            border-color: rgba(0, 229, 255, 0.15);
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.03);
+            transform: translateY(-1px);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .section-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .section:nth-child(odd) .section-number {
+            background: rgba(0, 229, 255, 0.12);
+            color: #00E5FF;
+            border: 1px solid rgba(0, 229, 255, 0.2);
+        }
+
+        .section:nth-child(even) .section-number {
+            background: rgba(124, 77, 255, 0.12);
+            color: #7C4DFF;
+            border: 1px solid rgba(124, 77, 255, 0.2);
+        }
+
+        .section h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFFFFF;
+            letter-spacing: 0.5px;
+        }
+
+        .section p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 15px;
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== HIGHLIGHT BOX ===== */
+        .highlight-box {
+            background: rgba(0, 229, 255, 0.04);
+            border-left: 3px solid #00E5FF;
+            border-radius: 0 8px 8px 0;
+            padding: 16px 20px;
+            margin: 16px 0;
+        }
+
+        .highlight-box p {
+            color: rgba(255, 255, 255, 0.75) !important;
+            font-size: 14px !important;
+        }
+
+        .highlight-box.success {
+            background: rgba(118, 255, 3, 0.04);
+            border-left-color: #76FF03;
+        }
+
+        .highlight-box.warning {
+            background: rgba(255, 215, 64, 0.04);
+            border-left-color: #FFD740;
+        }
+
+        /* ===== BULLET LIST ===== */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 8px 0;
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 15px;
+        }
+
+        .feature-list li::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            background: #00E5FF;
+            box-shadow: 0 0 6px rgba(0, 229, 255, 0.3);
+            flex-shrink: 0;
+            margin-top: 8px;
+        }
+
+        .feature-list li:nth-child(2n)::before {
+            background: #7C4DFF;
+            box-shadow: 0 0 6px rgba(124, 77, 255, 0.3);
+        }
+
+        .feature-list li:nth-child(3n)::before {
+            background: #FF6090;
+            box-shadow: 0 0 6px rgba(255, 96, 144, 0.3);
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-card {
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.05), rgba(124, 77, 255, 0.05));
+            border: 1px solid rgba(0, 229, 255, 0.15);
+        }
+
+        .contact-link {
+            color: #00E5FF;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .contact-link:hover {
+            color: #76FF03;
+            border-bottom-color: #76FF03;
+            text-shadow: 0 0 10px rgba(118, 255, 3, 0.3);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid rgba(42, 42, 78, 0.3);
+        }
+
+        .footer-blocks {
+            display: inline-flex;
+            gap: 3px;
+            margin-bottom: 12px;
+        }
+
+        .footer-block {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            opacity: 0.4;
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            .header {
+                padding: 40px 16px 30px;
+            }
+
+            .game-title {
+                font-size: 22px;
+                letter-spacing: 4px;
+            }
+
+            .container {
+                padding: 24px 16px 60px;
+            }
+
+            .section {
+                padding: 24px 20px;
+            }
+
+            .section h2 {
+                font-size: 16px;
+            }
+        }
+
+        /* ===== SCROLL REVEAL ANIMATION ===== */
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: reveal 0.6s ease forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+        .section:nth-child(7) { animation-delay: 0.7s; }
+        .section:nth-child(8) { animation-delay: 0.8s; }
+        .section:nth-child(9) { animation-delay: 0.9s; }
+
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Effects -->
+    <div class="bg-grid"></div>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-icon">
+            <div class="header-block"></div>
+            <div class="header-block"></div>
+            <div class="header-block"></div>
+            <div class="header-block"></div>
+        </div>
+        <h1 class="game-title">BLOCK HARMONY</h1>
+        <p class="page-title">Privacy Policy</p>
+    </header>
+
+    <!-- Content -->
+    <main class="container">
+
+        <div class="effective-date">
+            Effective Date: <span>January 1, 2025</span>
+        </div>
+
+        <!-- Section 1: Introduction -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">01</div>
+                <h2>Introduction</h2>
+            </div>
+            <p>
+                Welcome to <strong>Block Harmony</strong>. Your privacy is fundamentally
+                important to us. This Privacy Policy explains how we handle information
+                when you use our mobile application.
+            </p>
+            <div class="highlight-box success">
+                <p>
+                    <strong>Quick Summary:</strong> Block Harmony is designed as a fully
+                    offline game. We do not collect, store, transmit, or share any personal
+                    data whatsoever.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 2: Information We Collect -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">02</div>
+                <h2>Information We Collect</h2>
+            </div>
+            <p>
+                <strong>We do not collect any personal information.</strong> Block Harmony
+                is a completely offline puzzle game that operates entirely on your device.
+            </p>
+            <p>Specifically, we do <strong>NOT</strong> collect:</p>
+            <ul class="feature-list">
+                <li>Names, email addresses, or contact information</li>
+                <li>Location data or GPS information</li>
+                <li>Device identifiers or advertising IDs</li>
+                <li>Usage analytics or behavioral data</li>
+                <li>Photos, media, or files from your device</li>
+                <li>Network or internet activity information</li>
+                <li>Financial or payment information</li>
+            </ul>
+        </div>
+
+        <!-- Section 3: Local Data Storage -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">03</div>
+                <h2>Local Data Storage</h2>
+            </div>
+            <p>
+                Block Harmony stores minimal game data <strong>locally on your device only</strong>
+                to enhance your gaming experience. This data includes:
+            </p>
+            <ul class="feature-list">
+                <li><strong>High Score</strong> — Your best score is saved locally so you can
+                    track your personal progress</li>
+            </ul>
+            <div class="highlight-box">
+                <p>
+                    This data is stored using your device's local storage mechanism (Shared
+                    Preferences). It never leaves your device, is not transmitted to any server,
+                    and is not accessible to us or any third party.
+                </p>
+            </div>
+            <p>
+                You can clear this data at any time by clearing the app's data through your
+                device settings or by uninstalling the app.
+            </p>
+        </div>
+
+        <!-- Section 4: Third-Party Services -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">04</div>
+                <h2>Third-Party Services</h2>
+            </div>
+            <p>
+                Block Harmony does <strong>not</strong> integrate any third-party services,
+                SDKs, or APIs that collect user data. This includes:
+            </p>
+            <ul class="feature-list">
+                <li>No third-party analytics (Google Analytics, Firebase, etc.)</li>
+                <li>No advertising networks or ad SDKs</li>
+                <li>No social media integrations</li>
+                <li>No crash reporting services</li>
+                <li>No cloud storage or sync services</li>
+            </ul>
+        </div>
+
+        <!-- Section 5: Internet Permission -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">05</div>
+                <h2>Internet & Permissions</h2>
+            </div>
+            <p>
+                Block Harmony does <strong>not require internet access</strong> to function.
+                The game is fully playable offline with no network connectivity needed.
+            </p>
+            <p>
+                The app requests <strong>no special device permissions</strong> — no camera,
+                microphone, contacts, storage, or location access is needed or requested.
+            </p>
+        </div>
+
+        <!-- Section 6: Children's Privacy -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">06</div>
+                <h2>Children's Privacy</h2>
+            </div>
+            <p>
+                Block Harmony is safe for users of all ages. Since we do not collect any
+                personal information from anyone, we inherently comply with children's
+                privacy protection regulations including:
+            </p>
+            <ul class="feature-list">
+                <li>Children's Online Privacy Protection Act (COPPA)</li>
+                <li>General Data Protection Regulation (GDPR) — Children's provisions</li>
+                <li>California Consumer Privacy Act (CCPA)</li>
+            </ul>
+            <div class="highlight-box success">
+                <p>
+                    No data is collected from any user regardless of age, making the app
+                    inherently safe for children.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 7: Data Security -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">07</div>
+                <h2>Data Security</h2>
+            </div>
+            <p>
+                Since no personal data is collected or transmitted, there is no risk of data
+                breach or unauthorized access to your information through our app.
+            </p>
+            <p>
+                The locally stored high score data is protected by your device's built-in
+                security mechanisms (device lock, encryption, app sandboxing).
+            </p>
+        </div>
+
+        <!-- Section 8: Changes to This Policy -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-number">08</div>
+                <h2>Changes to This Policy</h2>
+            </div>
+            <p>
+                We may update this Privacy Policy from time to time. If we make any material
+                changes, we will update the "Effective Date" at the top of this policy and
+                notify users through an app update.
+            </p>
+            <div class="highlight-box warning">
+                <p>
+                    We encourage you to review this policy periodically. Your continued use
+                    of Block Harmony after changes are posted constitutes your acceptance
+                    of the updated policy.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 9: Contact Us -->
+        <div class="section contact-card">
+            <div class="section-header">
+                <div class="section-number">09</div>
+                <h2>Contact Us</h2>
+            </div>
+            <p>
+                If you have any questions, concerns, or suggestions about this Privacy Policy
+                or the app, please reach out to us:
+            </p>
+            <p>
+                📧 Email:
+                <a href="mailto:your-email@example.com" class="contact-link">
+                    your-email@example.com
+                </a>
+            </p>
+            <p>
+                🌐 Website:
+                <a href="https://your-website.com" class="contact-link" target="_blank">
+                    your-website.com
+                </a>
+            </p>
+            <p>
+                👤 Developer: <strong>Your Name / Company Name</strong>
+            </p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-blocks">
+            <div class="footer-block" style="background: #00E5FF;"></div>
+            <div class="footer-block" style="background: #7C4DFF;"></div>
+            <div class="footer-block" style="background: #FF6090;"></div>
+            <div class="footer-block" style="background: #FFD740;"></div>
+            <div class="footer-block" style="background: #76FF03;"></div>
+        </div>
+        <p>© 2025 Block Harmony. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
